@@ -1,0 +1,2540 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #5c4646;
+
+    background: #f7eee8;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening {
+
+     min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 248, 243, 0.35),
+            rgba(255, 248, 243, 0.35)
+        ),
+        url("images/background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* =========================
+   INVITATION CARD
+========================= */
+
+.card {
+
+    width: min(100%, 500px);
+
+    min-height: 680px;
+
+    padding: 60px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        rgba(255, 252, 249, 0.88);
+
+    border:
+        1px solid #d9c2b7;
+
+    box-shadow:
+        0 20px 60px
+        rgba(80, 50, 40, 0.15);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.invitation-title {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+
+.invite-text {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.heart {
+
+    font-size: 30px;
+
+    margin: 20px 0;
+}
+
+
+h1 {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 64px;
+
+    font-weight: normal;
+
+    margin: 0;
+
+    line-height: 1;
+}
+
+
+.and {
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    margin: 12px 0;
+}
+
+
+.line {
+
+    width: 100px;
+
+    height: 1px;
+
+    background: #b99b8d;
+
+    margin: 25px 0;
+}
+
+
+.guest {
+
+    font-size: 21px;
+
+    margin: 5px 0 15px;
+}
+
+
+.welcome {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    max-width: 350px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    cursor: pointer;
+}
+
+
+#openInvitation {
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    background: transparent;
+
+    border: 1px solid #8e7167;
+
+    color: #5c4646;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+#openInvitation:hover {
+
+    background: #5c4646;
+
+    color: white;
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+.decor {
+
+   position: absolute;
+
+    font-size: 180px;
+
+    opacity: 0.18;
+
+    z-index: 1;
+
+    filter: blur(0.3px);
+
+    animation: flowerFloat 6s ease-in-out infinite;
+}
+
+
+.flower-left {
+
+    top: -50px;
+
+    left: -40px;
+
+    transform: rotate(-20deg);
+}
+
+
+.flower-right {
+
+    bottom: -60px;
+
+    right: -40px;
+
+    transform: rotate(160deg);
+
+     animation-delay: 1.5s;
+}
+
+@keyframes flowerFloat {
+
+    0% {
+        transform: translateY(0) rotate(-20deg);
+    }
+
+    50% {
+        transform: translateY(10px) rotate(-15deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-20deg);
+    }
+
+}
+
+
+/* =========================
+   MAIN INVITATION
+========================= */
+
+.main-invitation {
+
+    min-height: 100vh;
+
+    padding: 80px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    justify-content: center;
+
+    background: #fbf5f0;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+.main-invitation.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+.section-small {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.main-invitation h2 {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 55px;
+
+    font-weight: normal;
+
+    margin: 15px 0;
+}
+
+
+.main-heart {
+
+    margin: 10px 0 25px;
+}
+
+
+.invitation-message {
+
+    max-width: 450px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   DETAILS
+========================= */
+
+.details {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    margin-top: 50px;
+
+    flex-wrap: wrap;
+}
+
+
+.detail {
+
+    min-width: 130px;
+}
+
+
+.icon {
+
+    font-size: 28px;
+}
+
+
+.detail h3 {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin: 12px 0;
+}
+
+
+.detail p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-button {
+
+    margin-top: 40px;
+
+    padding: 14px 30px;
+
+    background: transparent;
+
+    border: 1px solid #8e7167;
+
+    color: #5c4646;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.location-button:hover {
+
+    background: #5c4646;
+
+    color: white;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        min-height: 650px;
+
+        padding: 45px 20px;
+    }
+
+
+    h1 {
+
+        font-size: 55px;
+    }
+
+
+    .details {
+
+        gap: 25px;
+
+        flex-direction: column;
+    }
+
+
+    .main-invitation h2 {
+
+        font-size: 48px;
+    }
+    
+
+}
+
+/* =========================
+   COUPLE PHOTO
+========================= */
+
+.couple-photo {
+    width: 280px;
+    height: 360px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 150px 150px 20px 20px;
+    border: 6px solid #fff;
+    box-shadow: 0 15px 40px rgba(80, 50, 40, 0.18);
+}
+
+.couple-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   BRIDE & GROOM
+========================= */
+
+.people {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 45px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.person {
+    text-align: center;
+}
+
+.person-photo {
+    width: 170px;
+    height: 210px;
+    overflow: hidden;
+
+    border-radius: 100px 100px 15px 15px;
+
+    border: 5px solid #ffffff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(80, 50, 40, 0.15);
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+     object-fit: contain;
+
+    display: block;
+
+    background: #f7eee8;
+}
+
+.person h3 {
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 30px;
+
+    font-weight: normal;
+
+    margin: 15px 0 3px;
+}
+
+.person p {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin: 0;
+}
+
+.people {
+    gap: 25px;
+}
+
+.person-photo {
+    width: 140px;
+    height: 180px;
+}
+
+
+/* =========================
+   OPENING ANIMATION
+========================= */
+
+.card {
+    animation: cardAppear 1.5s ease forwards;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   WEDDING INVITATION CARD
+========================= */
+
+.invitation-card {
+    width: min(100%, 480px);
+
+    margin-top: 80px;
+
+    padding: 60px 35px;
+
+    text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 246, 0.96),
+            rgba(255, 250, 246, 0.96)
+        );
+
+    border: 1px solid #d7bdb0;
+
+    box-shadow:
+        0 20px 60px
+        rgba(80, 50, 40, 0.12);
+}
+
+
+/* Decorative inner border */
+
+.invitation-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    border: 1px solid #e2cec4;
+
+    pointer-events: none;
+}
+
+
+/* Heading */
+
+.card-heading {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    margin: 0 0 12px;
+}
+
+
+.card-intro {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin: 0;
+}
+
+
+/* Heart */
+
+.card-heart {
+
+    font-size: 27px;
+
+    margin: 22px 0 12px;
+}
+
+
+/* Names */
+
+.card-names {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    margin: 0;
+}
+
+
+/* Invitation text */
+
+.card-text {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 25px auto;
+
+    max-width: 330px;
+}
+
+
+/* Line */
+
+.card-line {
+
+    width: 80px;
+
+    height: 1px;
+
+    background: #b99b8d;
+
+    margin: 25px auto;
+}
+
+
+/* Date */
+
+.card-date {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.card-date > span {
+
+    font-size: 48px;
+
+    font-family:
+        "Times New Roman",
+        serif;
+}
+
+
+.card-date div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+}
+
+
+.card-date strong {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.card-date small {
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* Time */
+
+.card-time {
+
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* Venue */
+
+.card-venue {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 25px;
+
+    gap: 6px;
+}
+
+
+.card-venue strong {
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+.card-venue span {
+
+    font-size: 14px;
+}
+
+
+/* Footer */
+
+.card-footer {
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin: 30px auto 0;
+
+    max-width: 300px;
+
+    font-style: italic;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .invitation-card {
+
+        padding: 55px 25px;
+
+        margin-top: 60px;
+    }
+
+    .card-names {
+
+        font-size: 42px;
+    }
+
+    .card-date > span {
+
+        font-size: 42px;
+    }
+
+
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    width: 100%;
+    max-width: 700px;
+
+    margin-top: 100px;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #decac0;
+}
+
+.countdown-title {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.countdown-section h2 {
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 45px;
+
+    font-weight: normal;
+
+    margin: 0 0 40px;
+}
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.count-box {
+    width: 110px;
+
+    padding: 20px 10px;
+
+    border: 1px solid #d9c2b7;
+
+    background:
+        rgba(255, 252, 249, 0.7);
+}
+
+.count-box span {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.count-box small {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+@media (max-width: 600px) {
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .count-box {
+        width: 75px;
+
+        padding: 15px 5px;
+    }
+
+    .count-box span {
+        font-size: 24px;
+    }
+
+    .count-box small {
+        font-size: 8px;
+    }
+
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #8e7167;
+
+    background:
+        rgba(255, 252, 249, 0.9);
+
+    color: #5c4646;
+
+    font-size: 22px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px
+        rgba(80, 50, 40, 0.15);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.music-button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+.music-button.playing {
+
+    animation:
+        musicRotate 3s linear infinite;
+}
+
+
+@keyframes musicRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.75fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 18px;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    align-items: stretch;
+}
+
+
+/* Gallery frame */
+
+.gallery-item {
+    overflow: hidden;
+
+    border: 5px solid white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(80, 50, 40, 0.12);
+
+    background: #f7eee8;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* Large couple photo */
+
+.gallery-item.large {
+    grid-row: 1 / 3;
+
+    min-height: 500px;
+}
+
+
+.gallery-item.large img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Bride & Groom */
+
+.gallery-item:not(.large) {
+    aspect-ratio: 3 / 4;
+}
+
+
+.gallery-item:not(.large) img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* Hover */
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* =========================
+   MOBILE GALLERY
+========================= */
+
+@media (max-width: 600px) {
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        gap: 15px;
+    }
+
+
+    .gallery-item.large {
+
+        grid-row: auto;
+
+        min-height: auto;
+
+        aspect-ratio: 4 / 5;
+    }
+
+
+    .gallery-item:not(.large) {
+
+        aspect-ratio: 3 / 4;
+    }
+
+}
+
+
+/* =================================
+   ROMANTIC FLORAL BACKGROUND
+================================= */
+
+body {
+    background: #ffffff;
+}
+
+/* Floral layer */
+.floral-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Individual flowers */
+.flower {
+    position: absolute;
+    opacity: 0;
+    font-size: 60px;
+    animation: floralFloat 8s ease-in-out infinite;
+    color: yellowgreen;
+}
+
+/* Positions */
+
+.flower-1 {
+    top: 8%;
+    left: 3%;
+    animation-delay: 0s;
+}
+
+.flower-2 {
+    top: 20%;
+    right: 4%;
+    animation-delay: 1s;
+}
+
+.flower-3 {
+    top: 42%;
+    left: 2%;
+    animation-delay: 2s;
+}
+
+.flower-4 {
+    top: 55%;
+    right: 3%;
+    animation-delay: 3s;
+}
+
+.flower-5 {
+    top: 72%;
+    left: 5%;
+    animation-delay: 4s;
+}
+
+.flower-6 {
+    top: 82%;
+    right: 5%;
+    animation-delay: 5s;
+}
+
+.flower-7 {
+    top: 32%;
+    right: 8%;
+    animation-delay: 1.5s;
+}
+
+.flower-8 {
+    top: 65%;
+    left: 8%;
+    animation-delay: 2.5s;
+}
+
+.flower-9 {
+    top: 12%;
+    left: 45%;
+    animation-delay: 3.5s;
+}
+
+.flower-10 {
+    top: 90%;
+    left: 45%;
+    animation-delay: 4.5s;
+}
+
+/* Floating animation */
+
+@keyframes floralFloat {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px) rotate(0deg) scale(0.8);
+    }
+
+    20% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateY(-15px) rotate(8deg) scale(1);
+    }
+
+    80% {
+        opacity: 0.45;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-45px) rotate(-8deg) scale(0.85);
+    }
+}
+
+/* ================================
+   WEDDING DETAILS SECTION
+================================ */
+
+.wedding-details {
+    padding: 90px 20px;
+    text-align: center;
+    background: #fff8f8;
+}
+
+.details-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.details-subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #a66a6a;
+    margin-bottom: 10px;
+}
+
+.details-title {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    color: #6d3f46;
+    margin-bottom: 15px;
+}
+
+.details-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 50px;
+    color: #b97979;
+}
+
+.details-divider::before,
+.details-divider::after {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #d9aaaa;
+    margin: 0 15px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 35px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(100, 50, 50, 0.08);
+}
+
+.detail-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.detail-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    color: #70434a;
+    margin-bottom: 10px;
+}
+
+.detail-card p {
+    font-size: 17px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.detail-card span {
+    color: #777;
+    font-size: 15px;
+}
+
+.details-message {
+    max-width: 650px;
+    margin: 50px auto 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #6d5555;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .wedding-details {
+        padding: 70px 15px;
+    }
+
+    .details-title {
+        font-size: 34px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .detail-card {
+        padding: 28px 20px;
+    }
+
+    .details-message {
+        font-size: 19px;
+    }
+}
+
+
+/* =================================
+   LOCATION SECTION
+================================= */
+
+.location-section {
+    padding: 90px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.location-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.location-subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #a66a6a;
+    margin-bottom: 10px;
+}
+
+.location-title {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #6d3f46;
+    margin-bottom: 15px;
+}
+
+.location-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 40px;
+    color: #d6a0aa;
+    font-size: 24px;
+}
+
+.location-divider::before,
+.location-divider::after {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #e2c2c6;
+    margin: 0 15px;
+}
+
+.location-content {
+    max-width: 600px;
+    margin: auto;
+    padding: 45px 25px;
+    border: 1px solid #f0dfe1;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(100, 50, 50, 0.08);
+}
+
+.location-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.location-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #70434a;
+    margin-bottom: 8px;
+}
+
+.location-address {
+    font-size: 17px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.location-text {
+    max-width: 450px;
+    margin: 0 auto 30px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #6d5555;
+}
+
+/* Google Maps button */
+
+.maps-button {
+    display: inline-block;
+    padding: 13px 28px;
+
+    background: #d6a0aa;
+    color: #ffffff;
+
+    text-decoration: none;
+    border-radius: 30px;
+
+    font-size: 15px;
+    letter-spacing: 0.5px;
+
+    transition: all 0.3s ease;
+}
+
+.maps-button:hover {
+    background: #b97984;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(100, 50, 50, 0.15);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .location-section {
+        padding: 70px 15px;
+    }
+
+    .location-title {
+        font-size: 34px;
+    }
+
+    .location-content {
+        padding: 35px 20px;
+    }
+
+    .location-content h3 {
+        font-size: 26px;
+    }
+
+    .location-text {
+        font-size: 18px;
+    }
+
+    .maps-button {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   RSVP SECTION
+========================= */
+
+.rsvp-section {
+    position: relative;
+    padding: 70px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.rsvp-content {
+    max-width: 650px;
+    margin: auto;
+    padding: 45px 30px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(180, 140, 100, 0.25);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(80, 50, 30, 0.12);
+}
+
+.rsvp-icon {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.rsvp-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    margin: 5px 0 20px;
+    letter-spacing: 3px;
+}
+
+.rsvp-title {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.rsvp-message {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.rsvp-options {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.rsvp-option {
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(250, 246, 240, 0.9);
+}
+
+.rsvp-option > span {
+    font-size: 28px;
+}
+
+.rsvp-option p {
+    margin: 8px 0 15px;
+    line-height: 1.6;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    background: #25D366;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+}
+
+.rsvp-thanks {
+    margin-top: 30px;
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-style: italic;
+}
+
+
+
+/* =================================
+   WEDDING VENUE IMAGE
+================================= */
+
+.venue-image-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 25px auto 35px;
+    overflow: hidden;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(80, 50, 30, 0.18);
+}
+
+.venue-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.venue-image:hover {
+    transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .venue-image-wrapper {
+        margin: 20px auto 30px;
+        border-radius: 18px;
+    }
+
+    .venue-image {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .venue-image {
+        height: 230px;
+    }
+}
+
+
+/* =================================
+   SPECIAL INVITATION SECTION
+================================= */
+
+.special-invitation-section {
+    position: relative;
+    padding: 90px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.special-invitation-container {
+    position: relative;
+
+    max-width: 700px;
+    margin: auto;
+
+    padding: 60px 35px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(180, 140, 100, 0.25);
+
+    box-shadow:
+        0 15px 45px rgba(80, 50, 30, 0.12);
+}
+
+
+/* Decorative flower */
+
+.special-flower {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.75;
+
+    animation: specialFlowerFloat 3s ease-in-out infinite;
+}
+
+
+/* Subtitle */
+
+.special-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+
+    font-weight: 500;
+}
+
+
+/* Heading */
+
+.special-invitation-container h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin: 0 0 18px;
+}
+
+
+/* Divider */
+
+.special-divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 15px auto 25px;
+}
+
+.special-divider::before,
+.special-divider::after {
+    content: "";
+
+    width: 75px;
+
+    height: 1px;
+
+    background: rgba(120, 90, 60, 0.4);
+}
+
+.special-divider span {
+    font-size: 17px;
+}
+
+
+/* Quote */
+
+.special-quote {
+    max-width: 520px;
+
+    margin: 0 auto 35px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+/* Guest name */
+
+.special-guest {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.special-guest h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    margin: 0;
+
+    letter-spacing: 1px;
+}
+
+.guest-line {
+    width: 55px;
+
+    height: 1px;
+
+    background: rgba(120, 90, 60, 0.45);
+}
+
+
+/* Message */
+
+.special-message {
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* Heart */
+
+.special-heart {
+    margin-top: 28px;
+
+    font-size: 22px;
+
+    animation: specialHeartBeat 2s infinite;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes specialFlowerFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(8deg);
+    }
+
+}
+
+@keyframes specialHeartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .special-invitation-section {
+        padding: 60px 15px;
+    }
+
+    .special-invitation-container {
+        padding: 45px 20px;
+        border-radius: 22px;
+    }
+
+    .special-invitation-container h2 {
+        font-size: 34px;
+    }
+
+    .special-quote {
+        font-size: 17px;
+    }
+
+    .special-guest h3 {
+        font-size: 28px;
+    }
+
+    .guest-line {
+        width: 35px;
+    }
+
+}
+
+
+
+
+/* =================================
+   WEDDING PROGRAM SECTION
+================================= */
+
+.program-section {
+    position: relative;
+    padding: 90px 20px;
+    overflow: hidden;
+}
+
+.program-container {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+
+/* Subtitle */
+
+.program-subtitle {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+
+/* Main title */
+
+.program-title {
+    font-family: "Playfair Display", serif;
+    font-size: 46px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/* Divider */
+
+.program-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.program-divider::before,
+.program-divider::after {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: rgba(120, 90, 60, 0.4);
+}
+
+.program-divider span {
+    font-size: 20px;
+}
+
+
+/* Introduction */
+
+.program-intro {
+    max-width: 600px;
+    margin: 0 auto 55px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+/* =================================
+   TIMELINE
+================================= */
+
+.program-timeline {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: left;
+}
+
+
+/* Vertical line */
+
+.program-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 1px;
+
+    background: rgba(120, 90, 60, 0.3);
+
+    transform: translateX(-50%);
+}
+
+
+/* Timeline item */
+
+.program-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 60px 1fr;
+
+    align-items: center;
+
+    margin-bottom: 45px;
+}
+
+
+/* Time */
+
+.program-time {
+    text-align: right;
+
+    padding-right: 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+}
+
+
+/* Circle */
+
+.program-dot {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid rgba(120, 90, 60, 0.35);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: auto;
+
+    z-index: 2;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 15px rgba(80, 50, 30, 0.1);
+
+    transition: 0.3s ease;
+}
+
+.program-item:hover .program-dot {
+    transform: scale(1.15);
+}
+
+
+/* Event details */
+
+.program-details {
+    padding-left: 25px;
+}
+
+.program-details h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    margin: 0 0 7px;
+}
+
+.program-details p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* Ending */
+
+.program-ending {
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.program-ending span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+.program-ending strong {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .program-section {
+        padding: 65px 15px;
+    }
+
+    .program-title {
+        font-size: 36px;
+    }
+
+    .program-intro {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .program-item {
+        grid-template-columns: 75px 50px 1fr;
+        margin-bottom: 35px;
+    }
+
+    .program-timeline::before {
+        left: 75px;
+    }
+
+    .program-time {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    .program-dot {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .program-details {
+        padding-left: 12px;
+    }
+
+    .program-details h3 {
+        font-size: 18px;
+    }
+
+    .program-details p {
+        font-size: 13px;
+    }
+
+}
+
+/* =================================
+   FINAL WEDDING CLOSING
+================================= */
+
+.final-section {
+    position: relative;
+
+    padding: 100px 20px 120px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* Main container */
+
+.final-container {
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 65px 35px;
+
+    position: relative;
+}
+
+
+/* =================================
+   DECORATIONS
+================================= */
+
+.final-decoration {
+    font-size: 42px;
+
+    opacity: 0.65;
+
+    animation: finalFlowerFloat 4s ease-in-out infinite;
+}
+
+.top-decoration {
+    margin-bottom: 18px;
+}
+
+.bottom-decoration {
+    margin-top: 35px;
+
+    animation-delay: 1s;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.final-small {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+}
+
+.final-title {
+    font-family: "Playfair Display", serif;
+
+    font-size: 52px;
+
+    font-weight: 400;
+
+    margin: 0;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.final-divider {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 20px auto 30px;
+}
+
+.final-divider::before,
+.final-divider::after {
+    content: "";
+
+    width: 80px;
+
+    height: 1px;
+
+    background: rgba(120, 90, 60, 0.4);
+}
+
+.final-divider span {
+    font-size: 18px;
+}
+
+
+/* =================================
+   MESSAGE
+================================= */
+
+.final-message {
+    max-width: 550px;
+
+    margin: 0 auto 12px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+/* =================================
+   CONTACT
+================================= */
+
+.final-contact {
+    margin-top: 45px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(120, 90, 60, 0.2);
+}
+
+.contact-heading {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+}
+
+.contact-numbers {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.contact-numbers a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.contact-numbers a:hover {
+    opacity: 0.6;
+}
+
+.contact-numbers span {
+    font-size: 18px;
+}
+
+
+/* =================================
+   FINAL COUPLE
+================================= */
+
+.final-couple {
+    margin-top: 50px;
+}
+
+.final-couple p {
+    font-family: "Playfair Display", serif;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    margin-bottom: 8px;
+}
+
+.final-couple h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    margin: 0;
+}
+
+.final-date {
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =================================
+   BACK TO TOP BUTTON
+================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    border-radius: 50%;
+
+    background: rgba(70, 50, 40, 0.85);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-to-top span {
+    font-size: 23px;
+
+    display: block;
+
+    animation: arrowUp 1.8s infinite;
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes finalFlowerFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(7deg);
+    }
+
+}
+
+@keyframes arrowUp {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .final-section {
+        padding: 70px 15px 100px;
+    }
+
+    .final-container {
+        padding: 45px 15px;
+    }
+
+    .final-title {
+        font-size: 42px;
+    }
+
+    .final-message {
+        font-size: 16px;
+    }
+
+    .contact-numbers {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .final-couple h3 {
+        font-size: 29px;
+    }
+
+    .back-to-top {
+        right: 18px;
+
+        bottom: 18px;
+
+        width: 44px;
+
+        height: 44px;
+    }
+
+}
+
+
+
